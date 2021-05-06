@@ -21,21 +21,27 @@ function App() {
   }, []);
 
   return (
-    <div>
-      {isLoading
-        ? "Loading..."
-        : movies.map((movie) => {
+    <section class="container">
+      {isLoading ? (
+        <div class="loader">
+          <span class="loader__text">"Loading..."</span>
+        </div>
+      ) : (
+        <div class="movies">
+          {movies.map((movie) => {
             return (
               <Movie
                 key={movie.id}
                 title={movie.title}
                 year={movie.year}
                 summary={movie.summary}
-                poster={movie.poster}
+                poster={movie.medium_cover_image}
               />
             );
           })}
-    </div>
+        </div>
+      )}
+    </section>
   );
 }
 
