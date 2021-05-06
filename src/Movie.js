@@ -1,4 +1,5 @@
 import React from "react";
+import "./Movie.css";
 
 function Movie({ title, year, summary, poster, genres }) {
   return (
@@ -15,7 +16,7 @@ function Movie({ title, year, summary, poster, genres }) {
         </ul>
         <h3 className="movie__genres">{genres}</h3>
         <h3 className="movie__year">{year}</h3>
-        <h3 className="movie__summary">{summary}</h3>
+        <h3 className="movie__summary">{summary.slice(0, 140)}</h3>
       </div>
     </div>
   );
